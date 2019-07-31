@@ -4,6 +4,7 @@ def position_taken?(board, index)
 end
 
 # Define your WIN_COMBINATIONS constant
+
 def won?(board)
   WIN_COMBINATIONS.each do |win_combo|
     #check for player 1 win
@@ -46,4 +47,17 @@ def over?(board)
     puts 'no keep going'
     return false
   end
+end
+
+def winner(board)
+  if !won?(board)
+    return nil
+  else WIN_COMBINATIONS.each do |win_combo|
+    if check_win_combination?(board, 'X', win_combo)
+      return 'X'
+    elsif check_win_combination?(board, 'O', win_combo)
+      return 'O'
+    end
+  end
+end
 end
