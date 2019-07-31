@@ -23,3 +23,11 @@ def check_win_combination?(board, player, win_combo)
     board[position] == player
   end
 end
+
+def full?(board)
+  if board.include?(' ') || board.include?('')
+    return false
+else
+    return true
+  end
+end
